@@ -1,0 +1,19 @@
+<section class="login-form">
+    <h3>Welcome Back {{ day.number }}</h3>
+  
+    <form [formGroup]="form" (ngSubmit)="submitPopup()">
+        <label for="title">Title</label>
+        <br>
+        <input id="title" type="text" formControlName="title"/>
+
+        <label for="Description">Description</label>
+        <br>
+        <textarea id="Description" type="text" formControlName="description"></textarea>
+
+        <p>
+            <button type="submit">Save</button>
+            <button type="button" class="text-button" (click)="close()">Close</button>
+            <button type="button" class="text-button" (click)="erase()">Erase</button>
+        </p>
+    </form>
+  </section>

@@ -1,0 +1,28 @@
+<section class="container">
+
+    <div>
+        <button (click)="onPreviousMonth()">Previous</button>
+        <span>{{createCalendar.getMonthName(monthNumber)}} &nbsp; {{year}}</span>
+        <button (click)="onNextMonth()">Next</button>
+    </div>
+
+    <br>
+
+    <div class="calendar">
+        <span *ngFor="let weekDay of weekDaysName" class="day">
+            {{weekDay}}
+        </span>
+
+        <span *ngFor="let day of monthDays" class="day" (click)="choiseDay(day)">
+            <span [ngClass]="{
+                'chosen': day.chosen
+            }">{{day.number}}</span>
+            <!-- <span>{{day.number}}</span> -->
+        </span>
+    </div>
+
+    <!-- <button (click)="openDialog()">Open dialog</button> -->
+
+</section>
+
+
